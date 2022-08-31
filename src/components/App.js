@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./Header";
+// import TicketControl from "./TicketControl";
+import SignIn from "./SignIn";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App(){
+  return ( 
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/sign-in" element={<SignIn />} />
+        {/* <Route path="/" element={<TicketControl />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
